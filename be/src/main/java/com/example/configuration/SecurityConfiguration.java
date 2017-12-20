@@ -1,7 +1,5 @@
 package com.example.configuration;
 
-import javax.sql.DataSource;
-
 import com.example.security.CustomBasicAuthenticationEntryPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,13 +13,12 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-	private static String REALM="MY_TEST_REALM";
+	private static final String REALM="MY_TEST_REALM";
 
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -49,7 +46,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-
 
 		http.csrf().disable()
 				.authorizeRequests()

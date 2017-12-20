@@ -1,7 +1,5 @@
 package com.example.controller;
 
-import java.util.List;
-
 import com.example.model.Account;
 import com.example.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +9,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api")
@@ -44,8 +44,6 @@ public class AccountController {
         return new ResponseEntity<Account>(account, HttpStatus.OK);
     }
 
-
-
     //-------------------Create a Account--------------------------------------------------------
 
     @RequestMapping(value = "/account/", method = RequestMethod.POST)
@@ -63,7 +61,6 @@ public class AccountController {
         headers.setLocation(ucBuilder.path("/account/{id}").buildAndExpand(account.getId()).toUri());
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
     }
-
 
     //------------------- Update a Account --------------------------------------------------------
 
@@ -112,5 +109,4 @@ public class AccountController {
         accountService.deleteAllAccounts();
         return new ResponseEntity<Account>(HttpStatus.NO_CONTENT);
     }
-
 }
