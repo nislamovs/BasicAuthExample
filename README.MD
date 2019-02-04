@@ -1,9 +1,9 @@
-# SpringSecurityLoginExample
+# BasicAuth Example
 
-SpringSecurityLoginExample is a small standalone project, based on Springboot, Spring Security and AngularJs.
+BasicAuthExample is a small standalone project, based on Springboot, Spring Security and AngularJs.
 Project FE and BE parts are splitted in separate modules. 
 
-The project shows how could be implemented basic authorisation and simple 
+The project shows how could be implemented basic authentication and simple 
 user account management. Password are stored in database and encrypted. 
  
 List of features regarding user management:
